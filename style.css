@@ -1,0 +1,315 @@
+:root {
+	--teal: #54e6af;
+	--blue: #2c344b;
+	--darkBlue: #121725;
+	--white: #ffff;
+	--blueLight: #5a668a;
+	--lightBlue: #c2cbe5;
+	--tealLight: #b3ffe2;
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	/* automatically inherit box-sizing from the body element */
+	/* box-sizing: inherit; */
+	box-sizing: border-box;
+}
+
+/* setting the root font-size  */
+html {
+	box-sizing: border-box;
+	/* change to 1px so that we know that 1rem will equal 10px */
+	/* change the 10px to a percentage which will translate to the percentage given by the browser */
+	/* 10/16*100 */
+	/* this method is used when a user decides to adjust the font size on the browser  */
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Chivo', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 2.8rem;
+	background-color: var(--darkBlue);
+	height: 100vh;
+	overflow: hidden;
+}
+
+.container {
+	width: 1440px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.header {
+	padding-top: 10rem;
+	padding-left: 16.5rem;
+}
+
+.logo {
+	height: 5.6rem;
+	width: 13.485rem;
+}
+
+.content {
+	background-color: var(--darkBlue);
+	margin-left: 16.5rem;
+	padding-right: 5.8rem;
+	max-width: 72.3rem;
+	width: 100%;
+	height: 100%;
+	margin-top: 10rem;
+}
+
+.content-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	margin-top: 8.8rem;
+}
+
+.title {
+	padding-top: 8.8rem;
+	color: var(--teal);
+	text-transform: uppercase;
+	font-size: 5.2rem;
+	font-weight: 300;
+	line-height: 6.2rem;
+	text-align: left;
+}
+
+.header-span {
+	color: var(--white);
+}
+
+.content-info {
+	color: var(--lightBlue);
+	max-width: 44.5rem;
+	padding-top: 2.4rem;
+	padding-right: 0.9rem;
+}
+
+.email {
+	padding-top: 4rem;
+	position: relative;
+}
+input[type='email'] {
+	padding: 1.4rem 3.2rem;
+	background-color: var(--blueLight);
+	border-radius: 2.8rem;
+	border: none;
+	width: 42.7rem;
+	height: 5.6rem;
+	outline: none;
+}
+
+input[type='email']:hover {
+	cursor: pointer;
+}
+
+input[type='email']::placeholder {
+	color: var(--lightBlue);
+	font-size: 1.4rem;
+}
+
+.email-button {
+	position: absolute;
+	top: 4.5rem;
+	right: 11.3rem;
+	background: var(--teal);
+	color: var(--darkBlue);
+	padding: 0.9rem 2.7rem;
+	font-size: 1.4rem;
+	line-height: 2.8rem;
+	display: block;
+	text-align: center;
+	border: none;
+	border-radius: 2.8rem;
+}
+
+.email-button:hover {
+	cursor: pointer;
+	background-color: var(--tealLight);
+}
+
+.companies {
+	padding-top: 6.4rem;
+	display: flex;
+	align-items: center;
+}
+.company-logo {
+	display: inline-block;
+	color: var(--lightBlue);
+}
+
+.company-logo:first-child {
+	padding-right: 4rem;
+}
+
+.company-logo:nth-child(2) {
+	padding-right: 4rem;
+}
+.company-logo:nth-child(3) {
+	padding-right: 2.7rem;
+}
+
+.podcast-background {
+	background-image: url('assets/desktop/image-host.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 64rem;
+	width: 88.8rem;
+	position: absolute;
+	top: -12.5rem;
+	right: 0;
+	z-index: -1;
+}
+
+.reverse {
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	position: relative;
+}
+
+.main::after {
+	content: '';
+	width: 23.2rem;
+	height: 10.4rem;
+	position: absolute;
+	display: inline-block;
+	background-image: url('assets/desktop/bg-pattern-dots.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	right: 0;
+	bottom: -5rem;
+}
+
+@media only screen and (max-width: 960px) {
+	.header {
+		padding-top: 5rem;
+		padding-left: 4rem;
+	}
+	.podcast-background {
+		height: 76.7rem;
+		width: 48rem;
+		background-position: 50%;
+		top: -27rem;
+	}
+
+	.content {
+		width: 63.5rem;
+		margin-left: 4rem;
+	}
+
+	.title {
+		font-size: 4.5rem;
+		line-height: 5.6rem;
+	}
+
+	.podcast-background {
+		background-image: url('assets/tablet/image-host.jpg');
+	}
+
+	.main::after {
+		content: '';
+		width: 23.2rem;
+		height: 10.4rem;
+		position: absolute;
+		display: inline-block;
+		background-image: url('assets/desktop/bg-pattern-dots.svg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		left: 0;
+		bottom: -26rem;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.header {
+		padding-top: 6rem;
+		padding-left: 0rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.content {
+		background-color: transparent;
+		margin-left: 0rem;
+		padding: 0rem 2.4rem;
+		height: 100%;
+		margin-top: 0rem;
+		width: 100%;
+	}
+
+	.title {
+		font-size: 2.5rem;
+		line-height: 3.8rem;
+		padding-top: 8.8rem;
+		padding-top: 0rem;
+		text-align: center;
+	}
+
+	.content-info {
+		padding-top: 2.4rem;
+		font-size: 1.5rem;
+		line-height: 25px;
+		text-align: center;
+	}
+
+	.email {
+		order: 2;
+	}
+
+	.companies {
+		order: 1;
+	}
+
+	.company-logo {
+		height: 1.7rem;
+	}
+
+	.company-logo:first-child {
+		padding-right: 2rem;
+	}
+
+	.company-logo:nth-child(2) {
+		padding-right: 2.5rem;
+	}
+	.company-logo:nth-child(3) {
+		padding-right: 1.6rem;
+	}
+
+	.email {
+		width: 100%;
+	}
+
+	.email-button {
+		position: absolute;
+		top: 11rem;
+		width: 100%;
+		left: 0;
+	}
+	input[type='email'] {
+		width: 100%;
+	}
+
+	.main::after {
+		background-image: none;
+	}
+
+	.podcast-background {
+		background-image: url('assets/mobile/image-host.jpg');
+		height: 110vh;
+		width: 100%;
+		background-position: 50%;
+		opacity: 0.1;
+	}
+}
