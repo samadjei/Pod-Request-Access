@@ -6,6 +6,7 @@
 	--blueLight: #5a668a;
 	--lightBlue: #c2cbe5;
 	--tealLight: #b3ffe2;
+	--error: #fb3e3e;
 }
 
 *,
@@ -97,6 +98,10 @@ body {
 	padding-top: 4rem;
 	position: relative;
 }
+form {
+	position: relative;
+}
+
 input[type='email'] {
 	padding: 1.4rem 3.2rem;
 	background-color: var(--blueLight);
@@ -312,4 +317,28 @@ input[type='email']::placeholder {
 		background-position: 50%;
 		opacity: 0.1;
 	}
+}
+
+small {
+	display: none;
+	color: var(--error);
+	position: absolute;
+	top: 10rem;
+	left: 2rem;
+}
+
+small {
+	display: none;
+	color: var(--error);
+	position: absolute;
+	top: 10rem;
+	left: 2rem;
+}
+
+form.error small {
+	display: block;
+}
+
+input.success {
+	border: 1px solid green;
 }
