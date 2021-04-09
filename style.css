@@ -35,8 +35,6 @@ body {
 	font-weight: 300;
 	line-height: 2.8rem;
 	background-color: var(--darkBlue);
-	min-width: 100%;
-	overflow: hidden;
 }
 
 /* Header */
@@ -53,7 +51,6 @@ body {
 /* Dots */
 .main {
 	position: relative;
-	min-height: 100vh;
 }
 
 .main::after {
@@ -75,7 +72,6 @@ body {
 	margin-left: 16.5rem;
 	padding-right: 5.8rem;
 	max-width: 72.3rem;
-	height: 100vh;
 	margin-top: 8.8rem;
 }
 
