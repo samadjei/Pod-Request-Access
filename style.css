@@ -32,20 +32,15 @@ html {
 body {
 	font-family: 'Chivo', sans-serif;
 	font-size: 18px;
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 2.8rem;
 	background-color: var(--darkBlue);
-	height: 100vh;
 	overflow: hidden;
+	min-height: 100vh;
+	min-width: 100%;
 }
 
-.container {
-	width: 1440px;
-	max-width: 100%;
-	margin: 0 auto;
-	overflow: hidden;
-}
-
+/* Header */
 .header {
 	padding-top: 10rem;
 	padding-left: 16.5rem;
@@ -56,14 +51,32 @@ body {
 	width: 13.485rem;
 }
 
+/* Dots */
+.main {
+	position: relative;
+}
+
+.main::after {
+	content: '';
+	width: 23.2rem;
+	height: 10.4rem;
+	position: absolute;
+	display: inline-block;
+	background-image: url('assets/desktop/bg-pattern-dots.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	top: 45rem;
+	right: 0;
+}
+
+/* Content */
 .content {
 	background-color: var(--darkBlue);
 	margin-left: 16.5rem;
 	padding-right: 5.8rem;
 	max-width: 72.3rem;
-	width: 100%;
-	height: 100%;
-	margin-top: 10rem;
+	min-height: 100vh;
+	margin-top: 8.8rem;
 }
 
 .content-inner {
@@ -83,7 +96,7 @@ body {
 	text-align: left;
 }
 
-.header-span {
+.title-white {
 	color: var(--white);
 }
 
@@ -92,8 +105,10 @@ body {
 	max-width: 44.5rem;
 	padding-top: 2.4rem;
 	padding-right: 0.9rem;
+	font-weight: 300;
 }
 
+/* Form */
 .email {
 	padding-top: 4rem;
 	position: relative;
@@ -104,7 +119,7 @@ form {
 
 input[type='email'] {
 	padding: 1.4rem 3.2rem;
-	background-color: var(--blueLight);
+	background-color: var(--blue);
 	border-radius: 2.8rem;
 	border: none;
 	width: 42.7rem;
@@ -134,11 +149,24 @@ input[type='email']::placeholder {
 	text-align: center;
 	border: none;
 	border-radius: 2.8rem;
+	font-weight: bold;
 }
 
 .email-button:hover {
 	cursor: pointer;
 	background-color: var(--tealLight);
+}
+
+.error-message {
+	display: none;
+	color: var(--error);
+	position: absolute;
+	top: 10rem;
+	left: 2rem;
+}
+
+.form.error .error-message {
+	display: block;
 }
 
 .companies {
@@ -169,7 +197,7 @@ input[type='email']::placeholder {
 	height: 64rem;
 	width: 88.8rem;
 	position: absolute;
-	top: -12.5rem;
+	top: -13.5rem;
 	right: 0;
 	z-index: -1;
 }
@@ -179,24 +207,8 @@ input[type='email']::placeholder {
 	flex-direction: column;
 }
 
-.main {
-	position: relative;
-}
-
-.main::after {
-	content: '';
-	width: 23.2rem;
-	height: 10.4rem;
-	position: absolute;
-	display: inline-block;
-	background-image: url('assets/desktop/bg-pattern-dots.svg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	right: 0;
-	bottom: -5rem;
-}
-
-@media only screen and (max-width: 960px) {
+/* Tablet */
+@media only screen and (max-width: 768px) {
 	.header {
 		padding-top: 5rem;
 		padding-left: 4rem;
@@ -231,12 +243,27 @@ input[type='email']::placeholder {
 		background-image: url('assets/desktop/bg-pattern-dots.svg');
 		background-size: cover;
 		background-repeat: no-repeat;
+		top: 66rem;
 		left: 0;
-		bottom: -26rem;
 	}
 }
 
+/* Mobile */
 @media only screen and (max-width: 500px) {
+	.reverse {
+		display: flex;
+	}
+
+	.companies {
+		order: 1;
+		padding-top: 3.3rem;
+	}
+
+	.form {
+		order: 2;
+		padding-top: 0.8rem;
+	}
+
 	.header {
 		padding-top: 6rem;
 		padding-left: 0rem;
@@ -247,11 +274,14 @@ input[type='email']::placeholder {
 
 	.content {
 		background-color: transparent;
-		margin-left: 0rem;
+		margin: 0 auto;
 		padding: 0rem 2.4rem;
 		height: 100%;
-		margin-top: 0rem;
-		width: 100%;
+		max-width: 32.7rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 
 	.title {
@@ -267,14 +297,7 @@ input[type='email']::placeholder {
 		font-size: 1.5rem;
 		line-height: 25px;
 		text-align: center;
-	}
-
-	.email {
-		order: 2;
-	}
-
-	.companies {
-		order: 1;
+		padding: 0 1.7rem;
 	}
 
 	.company-logo {
@@ -317,28 +340,12 @@ input[type='email']::placeholder {
 		background-position: 50%;
 		opacity: 0.1;
 	}
-}
 
-small {
-	display: none;
-	color: var(--error);
-	position: absolute;
-	top: 10rem;
-	left: 2rem;
-}
-
-small {
-	display: none;
-	color: var(--error);
-	position: absolute;
-	top: 10rem;
-	left: 2rem;
-}
-
-form.error small {
-	display: block;
-}
-
-input.success {
-	border: 1px solid green;
+	.error-message {
+		display: none;
+		color: var(--error);
+		position: absolute;
+		top: 16rem;
+		left: 2rem;
+	}
 }
